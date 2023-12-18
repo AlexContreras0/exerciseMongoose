@@ -21,7 +21,7 @@ const getUserById = async (req, res) => {
   try {
     const userId = req.params.id; // Obtiene el ID del usuario de los parámetros de la solicitud
     const user = await userModel.findById(userId); // Busca un usuario por su ID
-    res.status(200).json({ status: "succeeded", user, error: null }); // Devuelve el usuario encontrado
+    res.status(200).json({ status: "succeeded", user }); // Devuelve el usuario encontrado
   } catch (error) {
     res
       .status(500)

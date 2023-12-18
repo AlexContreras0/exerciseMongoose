@@ -8,6 +8,7 @@ const {
   searchTerm,
   searchByName,
 } = require("../controllers/usersControllers");
+const verifyToken = require("../middlewares/auth");
 
 const router = require("express").Router();
 

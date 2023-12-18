@@ -6,6 +6,7 @@ const mongoose = require("mongoose");
 const PORT = 3000;
 const userRouter = require("./router/userRoutes");
 const productRouter = require("./router/productRoutes");
+const loginRouter = require("./router/loginRoutes");
 
 //Así inicializamos express y podemos acceder a todas las funcionalidades que nos proporciona
 const app = express();
@@ -36,6 +37,7 @@ db.on("disconected", () => {
 
 app.use("/product", productRouter);
 app.use("/user", userRouter);
+app.use("/auth", loginRouter);
 
 app.listen(PORT, () => {
   console.log(`Server running http://localhost:${PORT}`);
